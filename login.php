@@ -36,7 +36,7 @@ switch ($msg) {
     // --------------------
     case 'cookies' :
         $message_class = 'warning';
-        $message = 'Unable to connect to https://myrgu.scm.azurewebsites.net/phpMyAdmin/group_assessment'; 
+        $message = 'Unable to connect to https://myrgu.azurewebsites.net/phpMyAdmin/group_assessment';
         break;
     // --------------------
     case 'logout' :
