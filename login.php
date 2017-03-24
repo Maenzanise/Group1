@@ -37,49 +37,6 @@ include("inc_global.php");// Establishing connection with our database
 
 
 
-// --------------------------------------------------------------------------------
-// Process GET/POST
-
-$msg = fetch_GET('msg', null);
-
-switch ($msg) {
-    case 'connfailed' :
-        $message_class = 'warning';
-        $message = 'A connection to the authentication server could not be established.<br />Please try again later.';
-        break;
-    // --------------------
-    case 'denied' :
-        $message_class = 'warning';
-        $message = 'You attempted to access a restricted page.<br />It may be that your session has timed out so please re-enter your details.';
-        break;
-    // --------------------
-    case 'no access' :
-        $message_class = 'warning';
-        $message = 'Your account has been disabled.<br />Please contact support if you do not think this should be the case.';
-        break;
-    // --------------------
-    case 'invalid' :
-        $message_class = 'warning';
-        $message = 'Your username and password were rejected.<br />Please check your details and try again.';
-        break;
-    // --------------------
-    case 'cookies' :
-        $message_class = 'warning';
-        $message = 'Unable to connect to https://myrgu.azurewebsites.net/phpMyAdmin/group_assessment';
-        break;
-    // --------------------
-    case 'logout' :
-        $message_class = 'info';
-        $message = 'You have logged out.<br />If you wish to log back in, please re-enter your details.';
-        break;
-    // --------------------
-    default :
-        $message_class = 'info';
-        $message = 'To start using WebPA you have to log in.';
-        break;
-}
-
-// --------------------------------------------------------------------------------
 // Begin Page
 
 $UI->page_title = 'Robert Gordon Online Assessment Login';
