@@ -25,9 +25,13 @@ include("inc_global.php");// Establishing connection with our database
     </form>     <div class="error">
 
 </div>
- if(empty($_POST["username"]) || empty($_POST["password"]))
+
  {
-     echo "Both fields are required.";
+    <?php
+    //if(empty($_POST["username"]) || empty($_POST["password"]))
+    //echo "Both fields are required.";
+
+    ?>
  }else
      $username = $_POST['username'];
      $password = $_POST['password'];
