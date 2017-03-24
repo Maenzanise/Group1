@@ -49,8 +49,11 @@ include("inc_global.php");// Establishing connection with our database
          // Redirecting To another Page
      else
          {
+
+
              {
-             echo "Incorrect username or password.";
+
+            // echo "Incorrect username or password.";
          }
 
 }
