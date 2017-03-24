@@ -32,7 +32,9 @@ include("inc_global.php");// Establishing connection with our database
     //echo "Both fields are required.";
 
     ?>
- }else
+ }
+<?php
+    // else
      $username = $_POST['username'];
      $password = $_POST['password'];
      $sql = "SELECT uid FROM users
