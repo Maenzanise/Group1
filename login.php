@@ -7,7 +7,8 @@ include("connection.php");// Establishing connection with our database
  * Time: 14:48
  */
 
-require_once("includes/inc_global.php");
+
+
 
 // --------------------------------------------------------------------------------
 // Process GET/POST
