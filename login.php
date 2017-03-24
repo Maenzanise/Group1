@@ -6,7 +6,25 @@ include("inc_global.php");// Establishing connection with our database
  * Date: 23/03/2017
  * Time: 14:48
  */
+ //echo $error;?>
+<?php
+//echo $username; echo $password;
+?>
+</div>
+<h1>php login form with session</h1>
+<div class="login box">
+    <h3>login form</h3>
+    <br><br>
+    <form method="post" action="login.php">
+        <label >Username:</label><br>
+        <input type="text" name="username" placeholder="username"/>
+        <br><br>
+        <label>Password:</label>
+        <br><input type="password" name="password" placeholder="password"/>
+        <br><br >         <input type="submit" name="submit" value = "login"/>
+    </form>     <div class="error">
 
+</div>
  if(empty($_POST["username"]) || empty($_POST["password"]))
  {
      echo "Both fields are required.";
