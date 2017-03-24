@@ -1,5 +1,5 @@
 <?php
-include("login.php");// Establishing connection with our database
+include("inc_global.php");// Establishing connection with our database
 /**
  * Created by PhpStorm.
  * User: 1611403
