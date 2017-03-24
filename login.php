@@ -43,14 +43,14 @@ include("inc_global.php");// Establishing connection with our database
      if (mysqli_num_rows($result) == 1) {
          {
              header("location:index.html");
-       //  }
+        }
 
        // Redirecting To another Page
     // else
 // echo "Incorrect username or password.";
 
 
-//}
+}
 
 
 ?>
