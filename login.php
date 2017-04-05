@@ -11,9 +11,9 @@ include("inc_global.php");// Establishing connection with our database
 //echo $username; echo $password;
 ?>
 </div>
-<h1>php login form with session</h1>
+<h1>php login form</h1>
 <div class="login box">
-    <h3>login form</h3>
+    <h3>Please login</h3>
     <br><br>
     <form method="post" action="login.php">
         <label >Username:</label><br>
