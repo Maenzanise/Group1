@@ -1,58 +1,37 @@
-<?php
-include("inc_global.php");// Establishing connection with our database
-/**
- * Created by PhpStorm.
- * User: 1611403
- * Date: 23/03/2017
- * Time: 14:48
- */
- //echo $error;?>
-<?php
-//echo $username; echo $password;
-?>
-</div>
-<h1>Login form</h1>
-<div class="login box">
-    <h3>Please login to continue</h3>
-    <br><br>
-    <form method="post" action="login.php">
-        <label >Username:</label><br>
-        <input type="text" name="username" placeholder="username"/>
-        <br><br>
-        <label>Password:</label>
-        <br><input type="password" name="password" placeholder="password"/>
-        <br><br >         <input type="submit" name="submit" value = "login"/>
-    </form>     <div class="error">
-
-</div>
-
- {
-    <?php
-    //if(empty($_POST["username"]) || empty($_POST["password"]))
-    //echo "Both fields are required.";
-
-    ?>
- }
-<?php
-    // else
-     $username = $_POST['username'];
-     $password = $_POST['password'];
-     $sql = "SELECT uid FROM users
-             WHERE username=' $username' and password='$password'";
-     $result = mysqli_query($db, $sql);
-     if (mysqli_num_rows($result) == 1) {
-         {
-             header("location:index.html");
-        }
-
-       // Redirecting To another Page
-    // else
-// echo "Incorrect username or password.";
-
-
+>?php
+include("config.php");
+session_start();
+if($_SERVER["REQUEST_METHOD"] == "POST")
+{
+// username and password sent from Form
+$myusername=addslashes($_POST['username']);
+$mypassword=addslashes($_POST['password']);
+ 
+$sql="SELECT id FROM admin WHERE username='$myusername' and passcode='$mypassword'";
+$result=mysql_query($sql);
+$row=mysql_fetch_array($result);
+$active=$row['active'];
+$count=mysql_num_rows($result);
+ 
+ 
+// If result matched $myusername and $mypassword, table row must be 1 row
+if($count==1)
+{
+session_register("myusername");
+$_SESSION['login_user']=$myusername;
+ 
+header("location: welcome.php");
 }
-
-
+else
+{
+$error="Your Login Name or Password is invalid";
+}
+}
 ?>
-
-
+<form action="" method="post">
+    <label>UserName :</label>
+    <input type="text" name="username"/><br />
+    <label>Password :</label>
+    <input type="password" name="password"/><br />
+    <input type="submit" value=" Submit "/><br />
+</form>
