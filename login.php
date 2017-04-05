@@ -11,7 +11,7 @@ include("inc_global.php");// Establishing connection with our database
 //echo $username; echo $password;
 ?>
 </div>
-<h1>php login form</h1>
+<h1>login form</h1>
 <div class="login box">
     <h3>Please login</h3>
     <br><br>
