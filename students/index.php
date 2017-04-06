@@ -1,4 +1,6 @@
 <?php
+include("inc_global.php");// Establishing connection with our database
+
 /**
  * Created by PhpStorm.
  * User: Takson
