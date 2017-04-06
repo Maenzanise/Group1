@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-language" content="EN" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>RGU Group Peer</title>
+    <link href="https://wwwf.rgu.ac.uk/peerassessment/webpa/css/webpa.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://wwwf.rgu.ac.uk/peerassessment/webpa/css/webpa_print.css" media="print" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        #app_bar {
+            height: 54px;
+        }
+        #app_bar #inst_logo {
+            width: 168px;
+        }
+        #main {
+            top: 44px;
+        }
+    </style>
+    <style type="text/css">
+        <!--
+
+        p.warning { color: #f00; }
+        p.info { color: #000; }
+
+        -->
+    </style>
+    <script language="JavaScript" type="text/javascript">
+        <!--
+
+        var username_focussed = false;
+        var password_focussed = false;
+
+        function username_focus() {
+            if ( (!username_focussed) && (!password_focussed) ) { document.getElementById('username').focus(); }
+        }
+
+        //-->
+    </script>
+
+</head>
+<body onload="username_focus();">
+
+<div id="main">			<div id="side_bar">
+    <div class="alert_box" ><!-- style="margin: 40px 8px 8px 8px; font-size: 0.7em;"-->
+        <p><strong>Technical Problem?</strong></p>
+        <p>If you find a bug or encounter a technical problem, please <a href="https://rgu.service-now.com/ict/catalogue.do?uri=com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=030ec2b3b479fc40c3fc9803f2e8211e" title="Contact the Service Desk">contact the ICT Service Desk</a></p>
+    </div>
+</div>
+    <div id="content"><h1>WebPA Login</h1>
+
+
+
+        <p class="info">To start using WebPA you have to log in.</p>
+        <div class="content_box">
+
+            <p>Please enter your details below:</p>
+
+            <form action="login_check.php" method="post" name="login_form" style="margin-bottom: 2em;">
+                <div style="width: 300px;">
+                    <table class="form" cellpadding="2" cellspacing="1" width="100%">
+                        <tr>
+                            <th><label for="username">Username</label></th>
+                            <td><input type="text" name="username" id="username" maxlength="30" size="10" value="" onfocus="username_focussed=true" onblur="username_focussed=false" /></td>
+                        </tr>
+                        <tr>
+                            <th><label for="password">Password</label></th>
+                            <!-- rgu: increased max length to 30 due to students with long passwords -->
+                            <td><input type="password" name="password" id="password" maxlength="30" size="10" value="" onfocus="password_focussed=true" onblur="password_focussed=false" /></td>
+                        </tr>
+                    </table>
+
+                    <div class="form_button_bar">
+                        <input class="safe_button" type="submit" name="submit" value="login" />
+                    </div>
+                </div>
+            </form>
+            <!-- removed forgotten password link as not relevant at rgu 
+            <p><strong><a href="accounts/reset.php">Forgotten your password?</a></strong></p> -->
+            <p>This site requires cookies - If you have trouble logging in, please check your cookie settings.</p>
+
+        </div>
+
+    </div>
+    <div id="footer">
+        &copy; Loughborough University and University of Hull, 2005 -  2017&nbsp;&nbsp;&nbsp;
+        <span style="font-size: small;">Version: 2.0.0.11 [lti]</span>&nbsp;&nbsp;&nbsp;
+        <iframe src="https://wwwf.rgu.ac.uk/peerassessment/webpa/keep_alive.php" height="1" width="1" style="display: none;">keep alive</iframe>
+    </div>
+</div>
+
+<div id="header">
+    <div id="app_bar">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td width="200"><div id="inst_logo"><a href="INST__WWW"><img src="https://wwwf.rgu.ac.uk/peerassessment/webpa/images/logo_rgu.png" alt="rgu College London" /></a></div>
+                </td>
+                <td>&nbsp;</td><td align="right">	 <div id="title_logo"><a href="https://wwwf.rgu.ac.uk/peerassessment/webpa"><img src="https://wwwf.rgu.ac.uk/peerassessment/webpa/images/tool/appbar_webpa_logo.png" alt="WebPA" /></a></div>
+
+            </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="breadcrumb_bar">
+        &nbsp;&nbsp;&nbsp;login page    </div>
+</div>
+
+</body>
+</html>
