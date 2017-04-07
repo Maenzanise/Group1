@@ -10,11 +10,11 @@
 require_once(DOC__ROOT.'includes/classes/algorithms/abstract_algorithm.php');
 
 
-// @todo : There appear to be grading problems with the PETS algorithm in peer-only mode.
+// @todo : There appear to be grading problems with the method algorithm in peer-only mode.
 // Until we have conducted a full investigation and nailed down what's happening
 // this algorithm is disabled.
 
-class PetsAlgorithm extends Algorithm {
+class methodAlgorithm extends Algorithm {
 
   // Public Properties
   protected $_group_split100 = null;
