@@ -1,10 +1,13 @@
 <?php
+
+include("inc_global.php");// Establishing connection with our database
 /**
  * Created by PhpStorm.
- * User: Takson
- * Date: 24/03/2017
- * Time: 21:35
+ * User: 1611403
+ * Date: 23/03/2017
+ * Time: 14:48
  */
+//echo $error;?>
 // Turn off warning about possible session & globals compatibility problem
 ini_set('session.bug_compat_warn', 0);
 
@@ -47,12 +50,6 @@ define('APP__INST_LOGO_ALT','Your institution name');
 define('APP__INST_HEIGHT', '25'); //image height in pixels
 define('APP__INST_WIDTH', '102'); //image width in pixels
 
-//define whether the option to allow textual input is allowed
-/*NB. In the UK if requested any information about the student would need to be
-* made available to them under the Freedom of Information Act 2000
-* Therefore it is up to the installer of the software to meet the institutional requirements
-* dependant on this act.
-*
 */
 define('APP__ALLOW_TEXT_INPUT', TRUE);
 
@@ -63,8 +60,7 @@ define('APP__ENABLE_MODULE_DELETE', FALSE);
 // set the mail server variables if different mail server is to be used.
 ini_set('SMTP','localhost');
 ini_set('smtp_port','25');
-// if using a windows structure you need to set the send mail from
-ini_set('sendmail_from','someone@email.com');
+// send mail from ini_set('sendmail_from','someone@email.com');
 
 //define the authentication to be used and in the order they are to be applied
 $LOGIN_AUTHENTICATORS[] = 'DB2';
@@ -74,7 +70,7 @@ $LOGIN_AUTHENTICATORS[] = 'DB2';
 define('LDAP__HOST', "http://db2g.azurewebsites.net");
 define('LDAP__PORT', 3268);
 define('LDAP__USERNAME_EXT', '@http://db2g.azurewebsites.net');
-define('LDAP__BASE', 'dc=lboro, dc=ac, dc=uk');
+define('LDAP__BASE', 'dc=db2g, dc=ac, dc=uk');
 define('LDAP__FILTER', 'name={username}*');
 $LDAP__INFO_REQUIRED = array('displayname','mail','sn');
 // Name of attribute to use to check user type (via function below)
@@ -246,7 +242,7 @@ $UI = new UI($_user);
 // If we found a module to load, load it!
 if ($_module_id){
 
-  $sql_module = 'SELECT module_id, module_code, module_title FROM ' . APP__DB_TABLE_PREFIX . "module WHERE module_id = {$_SESSION['_module_id']}";
+  $sql_module = 'SELECT module_id, module_code, module_title FROM ' . APP__DB2_TABLE_PREFIX . "module WHERE module_id = {$_SESSION['_module_id']}";
   $_module = $DB->fetch_row($sql_module);
   $_module_code = $_module['module_code'];
 
