@@ -73,7 +73,7 @@ abstract class Algorithm {
 
   // These properties contain the final outputs from the algorithm
 
-  protected $_webpa_scores = null;          // The mutiplication factor based on relative performance
+  protected $_webgpa_scores = null;          // The mutiplication factor based on relative performance
   protected $_intermediate_grades = null;   // The intermediate grades (before penalties are applied)
   protected $_grades = null;                // The final grades
   protected $_penalties = null;             // Textual description of the penalties each member incurred
@@ -86,7 +86,8 @@ abstract class Algorithm {
    * @return  Algorithm
    */
   public function Algorithm() {
-  }// /->Algorithm()
+  }
+  // /->Algorithm()
 
 
 
@@ -262,14 +263,14 @@ abstract class Algorithm {
 
 
   /**
-   * Get the WebPA scores for every student.
+   * Get the webgpa scores for every student.
    *
    * Web-PA scores are the multiplication factors produced by analysings the scores received
    * in the peer assessment.  The average group score is 1.0.  Scores above 1 mean above average performance,
    * and vice-versa.
-   * Output is of the form  array ( student_id => webpa socre )
+   * Output is of the form  array ( student_id => webgpa socre )
    *
-   * @return  mixed  An assoc-array of webpa scores. On fail, null.
+   * @return  mixed  An assoc-array of webgpa scores. On fail, null.
    */
   public function get_webgpa_scores() {
     return $this->_webgpa_scores;
