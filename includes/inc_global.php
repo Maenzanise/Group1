@@ -22,7 +22,7 @@ date_default_timezone_set('Europe/London');
 define('APP__WWW', '');
 define('DOC__ROOT', ''); //must include the trailing /
 define('CUSTOM_CSS', '');  // Optional custom CSS file
-define('SESSION_NAME', 'WEBPA');
+define('SESSION_NAME', 'Group1');
 ini_set('session.cookie_path', '/');
 
 // The month (1-12) in which the academic year is deemed to start (always on 1st of the month)
@@ -67,13 +67,13 @@ ini_set('smtp_port','25');
 ini_set('sendmail_from','someone@email.com');
 
 //define the authentication to be used and in the order they are to be applied
-$LOGIN_AUTHENTICATORS[] = 'DB';
+$LOGIN_AUTHENTICATORS[] = 'DB2';
 // $LOGIN_AUTHENTICATORS[] = 'LDAP';
 
 // LDAP settings
-define('LDAP__HOST', "kdc.lboro.ac.uk");
+define('LDAP__HOST', "http://db2g.azurewebsites.net");
 define('LDAP__PORT', 3268);
-define('LDAP__USERNAME_EXT', '@lboro.ac.uk');
+define('LDAP__USERNAME_EXT', '@http://db2g.azurewebsites.net');
 define('LDAP__BASE', 'dc=lboro, dc=ac, dc=uk');
 define('LDAP__FILTER', 'name={username}*');
 $LDAP__INFO_REQUIRED = array('displayname','mail','sn');
@@ -90,11 +90,11 @@ $INSTALLED_MODS = array();
 ////
 
 //Application information
-define('APP__NAME', 'WebPA OS');
-define('APP__TITLE', 'WebPA OS : Online Peer Assessment System');
-define('APP__ID', 'webpa');
+define('APP__NAME', 'db2g OS');
+define('APP__TITLE', 'db2 OS : Online Peer Assessment System');
+define('APP__ID', 'db2g');
 define('APP__VERSION', '2.0.0.10');
-define('APP__DESCRIPTION','WebPA, an Open source, online peer assessment system.');
+define('APP__DESCRIPTION','db2g, an Open source, online peer assessment system.');
 define('APP__KEYWORDS','peer assessment, online, peer, assessment, tools, open source');
 
 define('APP__DB_TYPE', 'MySQLDAO');
