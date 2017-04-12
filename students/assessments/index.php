@@ -111,9 +111,9 @@ $UI->content_start();
 
 <?php
 if ( (!$open_assessments) && (!$pending_assessments) && (!$finished_assessments) ) {
-  echo('<p>You are not registered with any peer assessments in this module at the moment.</p>');
+  echo('<p>You are not registered with any peer assessments in this load at the moment.</p>');
 } else {
-  echo('<p>You are registered on the following peer assessments in this module:</p>');
+  echo('<p>You are registered on the following peer assessments in this load:</p>');
 
   if ($open_assessments) {
 ?>

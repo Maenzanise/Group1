@@ -59,12 +59,12 @@ HTMLEnd;
       $this->wizard->next_button = null;
     } else {
       if ($module_select=='multiple') {
-        echo('<p>You have opted to populate your groups with students chosen from multiple modules. Usually, groups need only contain students from a single module, but by selecting multiple modules your groups can contain a mixture of students from different modules.</p>');
+        echo('<p>You have opted to populate your groups with students chosen from multiple modules. Usually, groups need only contain students from a single load, but by selecting multiple modules your groups can contain a mixture of students from different modules.</p>');
         echo('<p>The modules below are those you are associated with, as either a lead or additional tutor.</p>');
         echo('<p>Select the modules to take students from by ticking the appropriate box:</p>');
       } else {
         echo('<p>The modules below are those you are associated with, as either a lead or additional tutor.</p>');
-        echo('<p>Please select the module you want to take students from:</p>');
+        echo('<p>Please select the load you want to take students from:</p>');
       }
 ?>
       <h2>Your Modules</h2>
@@ -96,7 +96,7 @@ HTMLEnd;
     $errors = null;
 
     $this->wizard->set_field('module_id',fetch_POST('module_id'));
-    if (is_empty($this->wizard->get_field('module_id'))) { $errors[] = 'You must select at least one module to take students from'; }
+    if (is_empty($this->wizard->get_field('module_id'))) { $errors[] = 'You must select at least one load to take students from'; }
 
     return $errors;
   }// /->process_form()
