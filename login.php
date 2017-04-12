@@ -42,7 +42,7 @@ switch ($msg) {
   // --------------------
   case 'cookies' :
         $message_class = 'warning';
-        $message = 'Unable to connect to ' . APP__NAME . '; please ensure that your browser is not blocking third-party cookies';
+        $message = 'Unable to connect to ' . WebGPAAlgorithm::class. '; please ensure that your browser is not blocking third-party cookies';
         break;
   // --------------------
   case 'logout' :
@@ -59,8 +59,8 @@ switch ($msg) {
 // --------------------------------------------------------------------------------
 // Begin Page
 
-$UI->page_title = 'WebPA Login';
-$UI->menu_selected = '';
+$UI->page_title = 'WebGPA_Login';
+$UI->menu_selected ='';
 $UI->help_link = '?q=node/26';
 $UI->breadcrumbs = array  (
   'login page'  => null ,
@@ -71,10 +71,6 @@ $UI->head();
 ?>
 <style type="text/css">
 <!--
-
-
-p.info { color: #000; }
-
 -->
 </style>
 <script language="JavaScript" type="text/javascript">
