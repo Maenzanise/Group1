@@ -174,25 +174,9 @@ $UI->content_end(false);
 
 
 
-LOGIN_CHECK.PHP
 
-<?php
-/**
- *
- * Check login credentials
- *
- * The file will also check the type of login that is taking place.
- *
- * @copyright 2017 Robert Gordon University
- * @license http://www.rgu.org/licenses/gpl.txt
- * @version 5.1.1.0
- *
- * + Given that the DBAuthenticator never returns an error message, changed the returned
- * message in case of incorrect username/password to 'invalid', as with an empty username
- * or password.
- * made by Terence Maenzanise [t.pmaenzanise@rgu.ac.uk] as of 15/03/17
- *
- */
+
+
 
 require_once("./includes/inc_global.php");
 
