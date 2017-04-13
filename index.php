@@ -19,7 +19,7 @@ if ($mod && in_array($mod, $INSTALLED_MODS)) {
   if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST') {
     include_once("mod/{$mod}/index.php");
   } else {
-    header('Location: ' . APP__WWW . "/mod/{$mod}/");
+    header('Location: ' . loggedIn.php  . "/mod/{$mod}/");
   }
 } else if ($_user) {
   if ($_user->is_admin()) {
@@ -27,10 +27,10 @@ if ($mod && in_array($mod, $INSTALLED_MODS)) {
   } else if ($_user->is_tutor()) {
     header('Location: ' . APP__WWW . '/tutors/');
   } else {
-    header('Location: ' . APP__WWW . '/students/');
+    header('Location: ' . index.php . '/students/');
   }
 } else {
-  header('Location: ' . APP__WWW . '/login.php');
+  header('Location: ' . APP__WWW . '/checklogin.php');
 }
 
 exit;
