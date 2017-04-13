@@ -20,4 +20,6 @@ function displayAccesslevelInformation($accessLevel)
 
     }
 }
+header('Location: students/index.php');
+
 ?>
