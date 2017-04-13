@@ -15,8 +15,8 @@ require_once('../includes/classes/class_simple_object_iterator.php');
 require_once('../includes/functions/lib_university_functions.php');
 require_once('../includes/classes/class_assessment.php');
 
-if (!check_user($_user, APP__USER_TYPE_STUDENT)){
-  header('Location:'. APP__WWW .'/logout.php?msg=denied');
+if (!check_user($_user, STUDENT)){
+  header('Location:'. students_assessments .'/logout.php?msg=denied');
   exit;
 }
 
