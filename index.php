@@ -23,7 +23,7 @@ if ($mod && in_array($mod, $INSTALLED_MODS)) {
   }
 } else if ($_user) {
   if ($_user->is_admin()) {
-    header('Location: ' . APP__WWW . '/admin/');
+    header('Location: ' . admin__index. '/admin/');
   } else if ($_user->is_tutor()) {
     header('Location: ' . APP__WWW . '/tutors/');
   } else {

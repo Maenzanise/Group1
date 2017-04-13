@@ -16,7 +16,7 @@ require_once('../includes/functions/lib_university_functions.php');
 require_once('../includes/classes/class_assessment.php');
 
 if (!check_user($_user, STUDENT)){
-  header('Location:'. students_assessments .'/logout.php?msg=denied');
+  header('Location:'. students_index .'/logout.php?msg=denied');
   exit;
 }
 
