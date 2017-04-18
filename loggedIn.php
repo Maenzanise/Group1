@@ -22,7 +22,7 @@ function displayAccesslevelInformation($accessLevel)
 }
 header('Location: student_index.php');
 ob_start();
-require 'student\index.php';
+require 'student_index.php';
 $output = ob_get_clean();
 
 ?>
