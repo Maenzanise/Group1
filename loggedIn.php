@@ -7,14 +7,14 @@
  */
 session_start();
 $access_level = $_COOKIE['access_level_cookie'];
-displayAccesslevelInformation($accesslevel);
+displayAccesslevelInformation($access_levellevel);
 
-function displayAccesslevelInformation($accessLevel)
+function displayAccesslevelInformation($access_Level)
 {
-    if ($accessLevel == "student")
+    if ($access_Level == "student")
         echo "<p style = \"background-color:purple\">You are currently logged in as a student</p>";
 
-        elseif ($accessLevel == "root"){
+        elseif ($access_Level == "root"){
         echo "<p<p style = \"background-color: red\">You are currently logged in as admin</p>";
          echo "<p<p style = \"background-color: red\">You now have access to additional admin features</p>";
 
