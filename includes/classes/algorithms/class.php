@@ -8,7 +8,7 @@
 
 
 
-require_once(DOC__ROOT.'/include/classes/algorithms/abstract_algorithm.php');
+require_once(php_ini_loaded_file() . '/include/classes/algorithms/abstract_algorithm.php');
 
 
 
