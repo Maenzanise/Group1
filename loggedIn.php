@@ -5,6 +5,51 @@
  * Date: 13/04/2017
  * Time: 11:12
  */
+
+session_start();
+
+      $username = $_POST ['Username'];
+      $password = $_POST ['Password'];
+
+                if ($username && $password)
+
+  {
+    /*$password = md5($password);*/
+
+    $connect = mysql_connect ("localhost", "root") or die (mysql_error());
+    mysql_select_db("https://db2g.scm.azurewebsites.net/phpMyAdmin/") or die (mysql_error());
+
+    $query = mysql_query ("select* from admin_users WHERE Username ='$username'");
+
+    $numrows = mysql_num_rows($query);
+
+    if ($numrows!=0)
+    {
+      while ($row =mysql_fetch_assoc ($query))
+      {
+            $dbusername = $row ['Username'];
+            $dbpassword = $row ['Password'];
+      }
+      if ($username==$dbusername&&$password==$dbpassword)
+      {
+        echo "Welcome! <a href='index.php'>Click</a> here to enter the Admin Area.";
+        $_SESSION['username']=$username;
+      }
+      else
+          echo "Incorect Pasword";
+    }
+    else
+        die ("That Admin does not exist");
+
+   // echo $numrows;
+
+  }
+  else
+      die("please click on the link to <a href='index.php'>Login</a>");
+
+
+  ?>
+
 session_start();
 $access_level = $_COOKIE['access_level_cookie'];
 displayAccesslevelInformation($access_levellevel);
