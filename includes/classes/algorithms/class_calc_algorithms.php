@@ -7,7 +7,7 @@
  * * A class implementing the method algorithm for calculating student grades.
  */
 
-require_once(DOC__ROOT.'includes/classes/algorithms/abstract_algorithm.php');
+require_once('includes/classes/algorithms/abstract_algorithm.php');
 
 
 // @todo : There appear to be grading problems with the method algorithm in peer-only mode.

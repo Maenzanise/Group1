@@ -5,7 +5,7 @@
  * Date: 07/04/2017
  * Time: 20:35
  */
-require_once(DOC__ROOT.'includes/classes/algorithms/abstract_algorithm.php');
+require_once(WebGPAAlgorithm.'/includes/classes/algorithms/abstract_algorithm.php');
 
 
 
