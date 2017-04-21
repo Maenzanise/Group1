@@ -63,15 +63,15 @@ ini_set('smtp_port','25');
 // send mail from ini_set('sendmail_from','someone@email.com');
 
 //define the authentication to be used and in the order they are to be applied
-$LOGIN_AUTHENTICATORS[] = 'DB2';
-// $LOGIN_AUTHENTICATORS[] = 'LDAP';
+// $LOGIN_AUTHENTICATORS[] = 'DB2';
+ $LOGIN_AUTHENTICATORS[] = 'LDAP';
 
 // LDAP settings
-define('LDAP__HOST', "http://db2g.azurewebsites.net");
-define('LDAP__PORT', 3268);
-define('LDAP__USERNAME_EXT', '@http://db2g.azurewebsites.net');
-define('LDAP__BASE', 'dc=db2g, dc=ac, dc=uk');
-define('LDAP__FILTER', 'name={username}*');
+define('LDAP__HOST', "ldap-auth-ad.ucl.ac.uk");
+define('LDAP__PORT', 636);
+define('LDAP__USERNAME_EXT', '@ucl.ac.uk');
+define('LDAP__BASE', 'dc=ad,dc=ucl,dc=ac,dc=uk');
+define('LDAP__FILTER', 'cn={username}*');
 $LDAP__INFO_REQUIRED = array('displayname','mail','sn');
 // Name of attribute to use to check user type (via function below)
 define('LDAP__USER_TYPE_ATTRIBUTE', 'description');
@@ -79,7 +79,7 @@ define('LDAP__DEBUG_LEVEL', 7);
 define('LDAP__AUTO_CREATE_USER', TRUE);
 
 // define installed modules
-$INSTALLED_MODS = array();
+$INSTALLED_MODS = array();$INSTALLED_MODS[] = 'lti';
 
 ////
 // System configuration section - do not change unless you know what you're doing!
@@ -114,12 +114,12 @@ define('APP__REMINDER_OPENING', FALSE);
 define('APP__REMINDER_CLOSING', FALSE);
 
 // Includes
-require_once(DOC__ROOT.'includes/functions/lib_common.php');
-require_once(DOC__ROOT.'includes/classes/class_dao.php');
-require_once(DOC__ROOT.'includes/classes/class_user.php');
-require_once(DOC__ROOT.'includes/classes/class_module.php');
-require_once(DOC__ROOT.'includes/classes/class_engcis.php');
-require_once(DOC__ROOT.'includes/classes/class_ui.php');
+require_once(define ('DOC__ROOT', '/data/apache/moodle-vhosts/webpa/');.'includes/functions/lib_common.php');
+require_once(define ('DOC__ROOT', '/data/apache/moodle-vhosts/webpa/');.'includes/classes/class_dao.php');
+require_once(define ('DOC__ROOT', '/data/apache/moodle-vhosts/webpa/');.'includes/classes/class_user.php');
+require_once(define ('DOC__ROOT', '/data/apache/moodle-vhosts/webpa/');.'includes/classes/class_module.php');
+require_once(define ('DOC__ROOT', '/data/apache/moodle-vhosts/webpa/');.'includes/classes/class_engcis.php');
+require_once(define ('DOC__ROOT', '/data/apache/moodle-vhosts/webpa/');.'includes/classes/class_ui.php');
 
 //set in individual pages to link to the most appropriate help sections.
 //this is not an option that can be changed in the configuration
