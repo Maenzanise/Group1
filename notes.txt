@@ -1,0 +1,14 @@
+Users
+    Students
+        Login through personalized link
+        View Course work
+        Give feedback (Only admin and student that posted to see)
+        Upload files along with the feedback
+    Administrators
+        Create student accounts
+        Create courses
+        Specify course work
+        View feedback
+        Split students into groups
+
+Mr Maradzike
