@@ -20,7 +20,7 @@ class Db {
 
     public function __construct() {
         // change the username and password to that set on your system {root - username} {dorespt: password}
-        $this->_connection = new mysqli("localhost", "root", "Takson08", "db2");
+        $this->_connection = new mysqli("127.0.0.1:52888", "root", "", "db2");
 
         if (mysqli_connect_error()) {
             trigger_error("Failed to connect to the database", E_USER_ERROR);
