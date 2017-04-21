@@ -7,12 +7,7 @@
  */
 
 
-
-require_once(php_ini_loaded_file() . '/include/classes/algorithms/abstract_algorithm.php');
-
-
-
-class WebPAAlgorithm extends Algorithm {
+class WebGPAAlgorithm extends Algorithm {
 
 
 
@@ -22,7 +17,8 @@ class WebPAAlgorithm extends Algorithm {
 	 * @return  object  A new instance of this class.
 	 */
 	public function __construct() {
-	}// /->__construct()
+	}
+	// /->__construct()
 
 
 
@@ -116,7 +112,7 @@ class WebPAAlgorithm extends Algorithm {
 
 
 
-			// @todo : apply criterion weightings here (empty method at present)
+
 			$this->_applyCriterionWeightings();
 
 

@@ -379,9 +379,7 @@ abstract class Algorithm {
    */
   protected function _applyCriterionWeightings() {
 
-    // @todo : criterion weightings should make an appearnce in a future version.
-
-    return true;
+        return true;
   }// /->_applyCriterionWeightings()
 
 

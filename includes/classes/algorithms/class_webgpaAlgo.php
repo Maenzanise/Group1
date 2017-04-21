@@ -114,7 +114,6 @@ class WebGPAAlgorithm extends Algorithm {
 
 
 
-      // @todo : apply criterion weightings here (empty method at present)
       $this->_applyCriterionWeightings();
 
 
