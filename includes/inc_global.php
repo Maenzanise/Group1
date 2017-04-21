@@ -22,8 +22,8 @@ date_default_timezone_set('Europe/London');
 // User configuration section
 ////
 
-define('APP__WWW', '');
-define('DOC__ROOT', ''); //must include the trailing /
+define('APP__WWW', 'https://webpa.moodle-test.ucl.ac.uk/');
+define ('DOC__ROOT', '/data/apache/moodle-vhosts/webpa/');
 define('CUSTOM_CSS', '');  // Optional custom CSS file
 define('SESSION_NAME', 'Group1');
 ini_set('session.cookie_path', '/');
@@ -33,9 +33,9 @@ define('APP__ACADEMIC_YEAR_START_MONTH', 9);
 
 //Database information
 define('APP__DB_HOST', 'localhost'); // If on a non-standard port, use this format:  <server>:<port>
-define('APP__DB_USERNAME', '');
-define('APP__DB_PASSWORD', '');
-define('APP__DB_DATABASE', '');
+define('APP__DB_USERNAME', 'admin');
+define('APP__DB_PASSWORD', '07519842834tpm');
+define('APP__DB_DATABASE', 'db2g');
 define('APP__DB_TABLE_PREFIX', 'pa2_');
 
 // Contact info
@@ -44,7 +44,7 @@ define('APP__EMAIL_NO_REPLY', 'no-reply@email.com');
 
 // logo
 define('APP__INST_LOGO', APP__WWW.'/images/logo.png');
-define('APP__INST_LOGO_ALT','Your institution name');
+define('APP__INST_LOGO_ALT','Robert Gordon University');
 
 //the following lines are to accomodate the image size within the css file to prevent the image from over flowing the area provided
 define('APP__INST_HEIGHT', '25'); //image height in pixels
