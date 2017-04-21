@@ -23,7 +23,9 @@ class Db {
         $this->_connection = new mysqli("127.0.0.1", "azure", "Takson08", "db2");
 
         if (mysqli_connect_error()) {
-            trigger_error("Failed to connect to the database", E_USER_ERROR);
+//            trigger_error("Failed to connect to the database", E_USER_ERROR);
+            echo $this->_connection->error;
+            die();
         }
     }
 
