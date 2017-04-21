@@ -1,43 +1,32 @@
 <?php
+$connectstr_dbhost = '';
+$connectstr_dbname = '';
+$connectstr_dbusername = '';
+$connectstr_dbpassword = '';
 
-class Db {
-
-    private $_connection;
-    private static $_instance;
-
-    /**
-     * 
-     * @return 
-     */
-    
-    public static function getInstance() {
-        if (!self::$_instance) {
-            self::$_instance = new self();
-        }
-
-        return self::$_instance;
+foreach ($_SERVER as $key => $value) {
+    if (strpos($key, "MYSQLCONNSTR_localdb") !== 0) {
+        continue;
     }
 
-    public function __construct() {
-        // change the username and password to that set on your system {root - username} {dorespt: password}
-        $this->_connection = new mysqli("127.0.0.1", "azure", "Takson08", "db2");
-
-        if (mysqli_connect_error()) {
-//            trigger_error("Failed to connect to the database", E_USER_ERROR);
-            echo $this->_connection->error;
-            die("unable to connect to the database :(");
-        }
-    }
-
-    /**
-     * Returns a mysqli object
-     * @return mysqli_object
-     */
-    public function getConnection() {
-        return $this->_connection;
-    }
-
-    // TO PREVENT CLONING OF THE DATABASE OBJECT
-    public function __clone() {}
-
+    $connectstr_dbhost = preg_replace("/^.*Data Source=(.+?);.*$/", "\\1", $value);
+    $connectstr_dbname = preg_replace("/^.*Database=(.+?);.*$/", "\\1", $value);
+    $connectstr_dbusername = preg_replace("/^.*User Id=(.+?);.*$/", "\\1", $value);
+    $connectstr_dbpassword = preg_replace("/^.*Password=(.+?)$/", "\\1", $value);
 }
+
+$link = mysqli_connect($connectstr_dbhost, $connectstr_dbusername, $connectstr_dbpassword,$connectstr_dbname);
+
+if (!$link) {
+    echo "Error: Unable to connect to MySQL." . PHP_EOL;
+    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+    exit;
+}
+
+
+
+
+
+
+?>
