@@ -15,21 +15,24 @@ if (isset($_SERVER['PATH_INFO']) && (strlen($_SERVER['PATH_INFO']) > 0)) {
   $mod = $_SERVER['QUERY_STRING'];
 }
 
-if ($mod && in_array($mod, $INSTALLED_MODS)) {
+if ($mod && in_array($mod, $INSTALLED_MODS))$INSTALLED_MODS = array();   {
   if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST') {
     include_once("mod/{$mod}/index.php");
   } else {
-    header('Location: ' . loggedIn.php  . "/mod/{$mod}/");
+    header('Location: ' . define('APP__WWW', 'https://webpa.moodle-test.ucl.ac.uk/')  . "/mod/{$mod}/");
   }
-} else if ($_user) {
+
   if ($_user->is_admin()) {
-    header('Location: ' . admin__index. '/admin/');
+    header('Location: ' . define(('APP__WWW' .'https://webpa.moodle-test.ucl.ac.uk/'). '/admin/'));
   } else if ($_user->is_tutor()) {
-    header('Location: ' . APP__WWW . '/tutors/');
+    header('Location: ' . define('APP__WWW' .'https://webpa.moodle-test.ucl.ac.uk/') . '/tutors/');
   } else {
-    header('Location: ' . index.php . '/students/');
+    header('Location: ' . define('APP__WWW' .'https://webpa.moodle-test.ucl.ac.uk/') . '/students/');
+    {
+
+      }
   }
-} else {
+
   header('Location: ' . APP__WWW . '/checklogin.php');
 }
 
