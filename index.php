@@ -23,11 +23,11 @@ if ($mod && in_array($mod, $INSTALLED_MODS))$INSTALLED_MODS = array();   {
   }
 
   if ($_user->is_admin()) {
-    header('Location: ' . define(('APP__WWW' .'https://webpa.moodle-test.ucl.ac.uk/'). '/admin/'));
+    header('Location: ' . define('APP__WWW' .'//http//db2g.azurewebsites.net/'). "/admin/{$mod}/");
   } else if ($_user->is_tutor()) {
-    header('Location: ' . define('APP__WWW' .'https://webpa.moodle-test.ucl.ac.uk/') . '/tutors/');
+    header('Location: ' . define('APP__WWW' .'//http//db2g.azurewebsites.net/') . '/tutors/');
   } else {
-    header('Location: ' . define('APP__WWW' .'https://webpa.moodle-test.ucl.ac.uk/') . '/students/');
+    header('Location: ' . define('APP__WWW' .'//http//db2g.azurewebsites.net/') . '/students/');
     {
 
       }
