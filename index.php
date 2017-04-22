@@ -1,8 +1,8 @@
 <?php
 require 'core/init.php';
-$user = new User;
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
+    $user = new User();
 //    var_dump($_POST);
      $email = filter_input(0, "email");
      $password = filter_input(0, "password");
@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
      }
      
 }
-
+$title = "Home";
 include 'includes/header.php';
 ?>
 <div class="container-fluid">
