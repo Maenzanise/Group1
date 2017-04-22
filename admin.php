@@ -199,7 +199,7 @@ include 'includes/header.php';
                             </div>
                             <div class="form-group">
                                 <label for="docs">Supporting doc(s)</label>
-                                <input type="file" name="docs" class="form-control">
+                                <input type="file" name="docs[]" class="form-control" multiple>
                             </div>
                         </div>
                         <div class="modal-footer">
