@@ -11,4 +11,25 @@ Users
         View feedback
         Split students into groups
 
-Mr Maenzanise
+    Recapture
+        clocks
+        images of students against their names so admin can put face to a name
+        sanitize passwords - hashed this-- first three letters of name,surname and email as 'password' how do i make it generate the password,
+        research and practise on rgu repo
+
+        sql injection ->make it a maenzanise fortress.
+         good lectures from mike,
+         mysql in app acts up big time ->need a shot of haig to calm down
+
+Timeline
+
+My final submission
+deleted repositories by mistake grrrrr no rest for the wicked
+database acting up, mongo and node an exciting topic i will enjoy, looks fancy too
+login page works but not connecting with dbase
+Group1 has been stable for over a month, must be getting the hang of this and doing it right
+repositories not in use about to get the chop
+rgu repository okayish, coding in there is all mumbled, but it works, just not great. Will keep this as backup incase Group1 acts up
+Bootstrap bootstrapping rgu repository but still works, backup suddenly appealing
+Group1 repository tidier determined to make it work, simple but flawless
+

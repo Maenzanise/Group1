@@ -20,6 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $name = filter_input(0, "name", FILTER_SANITIZE_STRING);
         $surname = filter_input(0, "surname", FILTER_SANITIZE_STRING);
         $email = filter_input(0, "email", FILTER_SANITIZE_EMAIL);
+
+        // Create password for the user created
         $password = substr($name, 0, 3) . substr($surname, 0, 3) . substr($email, 0, 3);
 
         $hash = sha1($password);
