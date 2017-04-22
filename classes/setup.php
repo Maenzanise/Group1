@@ -44,6 +44,7 @@ mysql_select_db($mysql_database) or die('Error selecting MySQL database: ' . mys
 
 // Temporary variable, used to store current query
 $templine = '';
+die("we are here");
 // Read in entire file
 $lines = file($filename);
 // Loop through each line
