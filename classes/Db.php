@@ -65,3 +65,5 @@ class Db {
     public function __clone() {}
 
 }
+
+$db = Db::getInstance();
