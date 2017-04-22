@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             }
         }else{
             var_dump($course);
-            die("unable to creat a group.");
+            die("unable to create a group.");
         }
     }
 //    die("I am getting post data.");
@@ -154,15 +154,15 @@ include 'includes/header.php';
                         <div class="modal-body">
                             <div class="form-group">
                                 <label form="name">First Name</label>
-                                <input typ="text" name="name" class="form-control">
+                                <input type="text" name="name" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label form="surname">Surname</label>
-                                <input typ="text" name="surname" class="form-control">
+                                <input type="text" name="surname" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label form="email">Email</label>
-                                <input typ="text" name="email" class="form-control">
+                                <input type="text" name="email" class="form-control">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -190,11 +190,11 @@ include 'includes/header.php';
                         <div class="modal-body">
                             <div class="form-group">
                                 <label form="name">Course Name</label>
-                                <input typ="text" name="name" class="form-control">
+                                <input type="text" name="name" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label form="name">Course Description</label>
-                                <textarea typ="text" name="description" class="form-control"
+                                <textarea type="text" name="description" class="form-control"
                                           placeholder="Enter course description and type any notes in this area"></textarea>
                             </div>
                             <div class="form-group">
@@ -227,7 +227,7 @@ include 'includes/header.php';
                         <div class="modal-body">
                             <div class="form-group">
                                 <label form="name">Group Name</label>
-                                <input typ="text" name="name" class="form-control">
+                                <input type="text" name="name" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label form="course">Course</label>
