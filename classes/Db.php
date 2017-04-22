@@ -49,7 +49,7 @@ class Db {
             $this->_connection->error = $this->_connection->error;
             die("unable to connect to the database : " . $this->_connection->error);
         }else{
-            var_dump($this->_connection);
+//            var_dump($this->_connection);
         }
     }
 
