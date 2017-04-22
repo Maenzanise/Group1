@@ -47,7 +47,7 @@ class Db {
         if (mysqli_connect_error()) {
 //            trigger_error("Failed to connect to the database", E_USER_ERROR);
             $this->_connection->error = $this->_connection->error;
-//            die("unable to connect to the database : " . $this->_connection->error);
+            die("unable to connect to the database : " . $this->_connection->error);
         }
     }
 
