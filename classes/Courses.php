@@ -10,8 +10,7 @@ class Courses {
         $this->_connection = $this->_db->getConnection();
     }
     
-
-
+    
     public function addNewCourse($name, $description){
         $query = "INSERT INTO courses (name, notes) "
                 . "VALUES "

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require 'core/init.php';
 // Check if the user has the rights
@@ -15,7 +15,7 @@ include 'includes/header.php'; ?>
             <ul class="nav nav-sidebar">
                 <li><a href="admin.php">Overview <span class="sr-only">(current)</span></a></li>
                 <li class="active"><a href="#">Students</a></li>
-                
+
                 <li><a href="groups.php">Groups</a></li>
             </ul>
 
