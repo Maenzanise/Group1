@@ -20,8 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $name = filter_input(0, "name", FILTER_SANITIZE_STRING);
         $surname = filter_input(0, "surname", FILTER_SANITIZE_STRING);
         $email = filter_input(0, "email", FILTER_SANITIZE_EMAIL);
-
-        // Create password for the user created
         $password = substr($name, 0, 3) . substr($surname, 0, 3) . substr($email, 0, 3);
 
         $hash = sha1($password);
@@ -30,6 +28,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             // SAVE DATA
             if ($user->createStudentAccount($name, $surname, $email, $hash, 1)) {
                 $message = "Successfully created the account";
+
+
+                $email =  "Dear {$name} {$surname}<br >"
+                . "You have been invited to join our PLS system.<br >"
+                        . "Please use the following details to login and view your account: <br >"
+                        . "url: {$_SERVER['SERVER_NAME']}"
+                        . "email: {$email}<br >"
+                        . "password: {$password}<br>"
+                        . "We hope to hear from you soon,<br>"
+                                . "Best Regards.";
+                $user->sendEmail($email, "Invitation to PLS", $email);
+
             } else {
                 $message = "Unable to create the account: " . $user->error;
             }
@@ -68,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     } elseif (filter_input(0, "action") == "add_group") {
         $name = filter_input(0, "name", FILTER_SANITIZE_STRING);
         $course = filter_input(0, "course", FILTER_SANITIZE_NUMBER_INT);
-        
+
         if($name && $course){
             if($user->createNewGroup($name, $course)){
                 $message = "Group created";
@@ -77,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             }
         }else{
             var_dump($course);
-            die("unable to create a group.");
+            die("unable to creat a group.");
         }
     }
 //    die("I am getting post data.");
@@ -91,7 +101,7 @@ include 'includes/header.php';
             <ul class="nav nav-sidebar">
                 <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
                 <!--Only admin to be able to see this-->
-                <!--<li><a href="students.php">Students</a></li>-->
+                <li><a href="students.php">Students</a></li>
 
                 <!--<li><a href="#">Courses</a></li>-->
                 <li><a href="groups.php">Groups</a></li>
@@ -156,15 +166,15 @@ include 'includes/header.php';
                         <div class="modal-body">
                             <div class="form-group">
                                 <label form="name">First Name</label>
-                                <input type="text" name="name" class="form-control">
+                                <input typ="text" name="name" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label form="surname">Surname</label>
-                                <input type="text" name="surname" class="form-control">
+                                <input typ="text" name="surname" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label form="email">Email</label>
-                                <input type="text" name="email" class="form-control">
+                                <input typ="text" name="email" class="form-control">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -192,16 +202,16 @@ include 'includes/header.php';
                         <div class="modal-body">
                             <div class="form-group">
                                 <label form="name">Course Name</label>
-                                <input type="text" name="name" class="form-control">
+                                <input typ="text" name="name" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label form="name">Course Description</label>
-                                <textarea type="text" name="description" class="form-control"
+                                <textarea typ="text" name="description" class="form-control"
                                           placeholder="Enter course description and type any notes in this area"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="docs">Supporting doc(s)</label>
-                                <input type="file" name="docs" class="form-control" multiple>
+                                <input type="file" name="docs" class="form-control">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -229,7 +239,7 @@ include 'includes/header.php';
                         <div class="modal-body">
                             <div class="form-group">
                                 <label form="name">Group Name</label>
-                                <input type="text" name="name" class="form-control">
+                                <input typ="text" name="name" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label form="course">Course</label>
